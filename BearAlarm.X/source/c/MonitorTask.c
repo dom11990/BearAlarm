@@ -49,6 +49,7 @@ void MonitorTask(void * parameters)
     {
         if(Data->Enabled)
         {
+            remaining_heap = xPortGetFreeHeapSize();
             for(loop_count = 0;loop_count<Data->NumberOfTasks;loop_count++)
             {
                 remaining_stack = uxTaskGetStackHighWaterMark(Data->Tasks[loop_count]);
